@@ -1,13 +1,9 @@
 //ChanderG - 29/07/14 - chandergovind@gmail.com
 //The C code with inline assembly
 
-/* 
- * print_int.c 
- * A system call to print an integer 
- */
 
 #define BUFF 20
-void printInt(int n){
+int printi(int n){
 	char buff[BUFF], zero='0';
 	int i=0,j, k, bytes;
 
@@ -31,8 +27,7 @@ void printInt(int n){
 			buff[k--] = temp;
 		}
 	} 
-	buff[i]='\n';
-	bytes = i+1;
+	bytes = i;
 
 	__asm__ __volatile__ (
 			"movl $4, %%eax \n\t"
@@ -41,6 +36,8 @@ void printInt(int n){
 			:
 			:"c"(buff), "d"(bytes)
 			) ;  // $4: write, $1: on stdin
+
+	return bytes;		
 }
 
 
