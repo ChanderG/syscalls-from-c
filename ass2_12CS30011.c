@@ -40,4 +40,18 @@ int printi(int n){
 	return bytes;		
 }
 
-
+int prints(char* c){
+  int n = 0; 
+  while(*c != '\0'){
+	__asm__ __volatile__ (
+			"movl $4, %%eax \n\t"
+			"movl $1, %%ebx \n\t"
+			"int $128 \n\t"
+			:
+			:"c"(c), "d"(1)
+			) ;  // $4: write, $1: on stdin
+  c++;
+	n++;
+	}
+	return n;
+}
