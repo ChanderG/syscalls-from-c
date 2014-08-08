@@ -21,10 +21,11 @@ void testPrints(){
 	int nos = prints(name);
   //printing twice to see if no space	
 	//printi(n);
-	printf("\n# of digits: %d\n", nos);
+	//printf("\n# of digits: %d\n", nos);
 }
 int main()
-{
-	testPrints();
+{ testPrints();//checking readi
+  //int a = readi(0);
+  //printf("%d", a);	
 	return 0;
 }

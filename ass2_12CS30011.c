@@ -55,3 +55,24 @@ int prints(char* c){
 	}
 	return n;
 }
+
+/*
+//not even started
+int printf(float in){
+}
+*/
+
+//alpha testing
+/*
+int readi(int *eP){  // *eP is for error, if the input is not an integer
+ char c = '0';
+	__asm__ __volatile__ (
+			"movl $3, %%eax \n\t"
+			"movl $2, %%ebx \n\t"
+			"int $128 \n\t"
+			:
+ 			:"c"(c), "d"(1)
+			) ;  // $3: read, $1: on stdin
+	return (c -'0');
+}
+*/
