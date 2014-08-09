@@ -63,16 +63,35 @@ int printf(float in){
 */
 
 //alpha testing
-/*
 int readi(int *eP){  // *eP is for error, if the input is not an integer
- char c = '0';
+	char buff[BUFF];
 	__asm__ __volatile__ (
 			"movl $3, %%eax \n\t"
-			"movl $2, %%ebx \n\t"
+			"movl $0, %%ebx \n\t"
 			"int $128 \n\t"
 			:
- 			:"c"(c), "d"(1)
+ 			:"c"(buff), "d"(BUFF)
 			) ;  // $3: read, $1: on stdin
-	return (c -'0');
+  int mult = 1;
+	int i = 0;
+	if(buff[0] == '-'){ mult = -1; i++; }
+	int ans = 0;
+  int dig;
+	char zero = '0';
+
+  for(;buff[i] != '\0';i++){
+	  if(buff[i] == '\n') continue;
+    dig = buff[i] - zero;
+	  if((dig < 0) || (dig > 9)){
+      //error case  ERR = 1
+		  *eP = 1;  
+      return -1;
+	  }
+	  else{
+      ans = 10*ans + dig;   
+	  } 
+  }
+	ans *= mult;
+	*eP = 0;  
+  return ans;
 }
-*/

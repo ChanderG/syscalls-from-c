@@ -14,4 +14,16 @@ a --32 -o softint.o softint.s
 ld -m elf_i386 softint.o
 ```
 
-A word of warning: this does not use /lib/ld-linux.so.2 for running.
+or equivalenty:
+```
+/lib/cpp -m32 softint.S softint.s
+cc -nostdlib -m32 softint.s 
+```
+
+A word of warning: this does not use /lib/ld-linux.so.2 for running. This will not be a problem when directly using this:
+
+```
+./a.out
+```
+
+Will look into this.

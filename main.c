@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "myl.h"
 
 void testPrinti(){
@@ -23,9 +24,17 @@ void testPrints(){
 	//printi(n);
 	//printf("\n# of digits: %d\n", nos);
 }
+
+void testReadi(){
+	printf("****Testing readi****\n");
+	//printf("Enter a number: ");
+	int *e = (int *) malloc(sizeof(int));
+	int sign = readi(e);
+	printf("%d",sign);
+}
+
 int main()
-{ testPrints();//checking readi
-  //int a = readi(0);
-  //printf("%d", a);	
+{
+  testReadi();
 	return 0;
 }
