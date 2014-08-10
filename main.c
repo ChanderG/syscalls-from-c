@@ -42,13 +42,16 @@ void testReadf(){
 	printf("%f",*f);
 }
 
-void testPrintf(){
+void testPrintd(){
 	float n;
-	printf("****Testing printf****\n");
+	printf("****Testing printd****\n");
 	printf("Enter an float: ");
 	scanf("%f", &n);
-	printf("%f", n);
-	int nos = printf1(n);
+
+  //try this to compare w/ printf
+	//printf("%f\n", n);
+
+	int nos = printd(n);
   //printing twice to see if no space	
 	//printi(n);
 	printf("\n# of digits: %d\n", nos);
@@ -56,6 +59,6 @@ void testPrintf(){
 
 int main()
 {
-  testPrintf();
+  testPrintd();
 	return 0;
 }

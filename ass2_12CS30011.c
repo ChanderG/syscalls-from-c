@@ -152,7 +152,7 @@ int readf(float *f){  // return value is error or OK
 
 //Corner cases:
 //3.303
-int printf1(float in){
+int printd(float in){
   char buff[BUFF];
 	int i = 0;
   char zero = '0';
@@ -197,7 +197,7 @@ int printf1(float in){
 			i++;
       rem = modff(rem,ptr);
 			count++;
-			if(count > 5) break;
+			if(count > 5) break;                   // cut point, we stop after reading 5+1 digits
 		}
   }
 
