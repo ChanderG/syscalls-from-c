@@ -1,5 +1,5 @@
 a.out: main.o  libass2_12CS30011.a
-		cc -m32 main.o -L. -lass2_12CS30011 -lm -g
+		cc -m32 main.o -L. -lass2_12CS30011 -g
 main.o: main.c
 		cc -Wall -m32 -c main.c -g
 libass2_12CS30011.a : ass2_12CS30011.o
