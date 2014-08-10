@@ -33,8 +33,29 @@ void testReadi(){
 	printf("%d",sign);
 }
 
+
+void testReadf(){
+	printf("****Testing readf****\n");
+	//printf("Enter a number: ");
+	float *f = (float *) malloc(sizeof(float));
+	int sign = readf(f);
+	printf("%f",*f);
+}
+
+void testPrintf(){
+	float n;
+	printf("****Testing printf****\n");
+	printf("Enter an float: ");
+	scanf("%f", &n);
+	printf("%f", n);
+	int nos = printf1(n);
+  //printing twice to see if no space	
+	//printi(n);
+	printf("\n# of digits: %d\n", nos);
+}
+
 int main()
 {
-  testReadi();
+  testPrintf();
 	return 0;
 }
