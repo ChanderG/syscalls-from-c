@@ -58,6 +58,8 @@ int prints(char* c){
   return n;
 }
 
+
+//In case of int overflow returns an error condition
 int readi(int *eP){  // *eP is for error, if the input is not an integer
   char buff[BUFF];
   __asm__ __volatile__ (
@@ -95,6 +97,8 @@ int readi(int *eP){  // *eP is for error, if the input is not an integer
 //Issues:
 //does not work for large numbers
 //numbers are approximate sometimes 
+
+//size is limited for some reason
 int readf(float *f){  // return value is error or OK
   char buff[BUFF];
   __asm__ __volatile__ (
@@ -152,12 +156,15 @@ int readf(float *f){  // return value is error or OK
 
 //Corner cases:
 //3.303
+
+//the function is named printd, change it to printf if needed.
 int printd(float in){
   char buff[BUFF];
   int i = 0;
   char zero = '0';
   int neg = 1;
 
+  if(in == 0) { buff[i] = zero; i++;}
   if(in < 0) { buff[i] = '-'; i++; neg = -1;}
    
   in *= neg;  
