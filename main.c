@@ -51,7 +51,7 @@ void testPrintd(){
   scanf("%f", &n);
 
   //try this to compare w/ printf
-  //printf("%f\n", n);
+  printf("%f\n", n);
 
   int nos = printd(n);
   //printing twice to see if no space  
@@ -61,7 +61,11 @@ void testPrintd(){
 
 int main()
 {
-  testReadf();
+  //testPrinti(); tested OK
+  //testPrints(); tested OK
+  //testReadi();  tested OK
+  //testReadf();  tested MEDIUM
+  testPrintd();   //tested Medium
   return 0;
 
 }

@@ -5,6 +5,7 @@
 #define BUFF 20
 
 //special case zero for all functions
+
 int printi(int n){
   char buff[BUFF], zero='0';
   int i=0,j, k, bytes;
@@ -42,6 +43,7 @@ int printi(int n){
   return bytes;    
 }
 
+//has size limitation
 int prints(char* c){
   int n = 0; 
   while(*c != '\0'){
@@ -95,10 +97,8 @@ int readi(int *eP){  // *eP is for error, if the input is not an integer
 
 //alpha testing phase
 //Issues:
-//does not work for large numbers
 //numbers are approximate sometimes 
 
-//size is limited for some reason
 int readf(float *f){  // return value is error or OK
   char buff[BUFF];
   __asm__ __volatile__ (
@@ -120,8 +120,8 @@ int readf(float *f){  // return value is error or OK
   float subsum;
   int j;
 
-  for(;buff[i] != '\0';i++){
-    if(buff[i] == '\n') continue;
+  for(;buff[i] != '\n';i++){
+    //if(buff[i] == '\n') continue;
     if((mode == 0) && (buff[i] == '.')){ mode = 1; continue; }
     dig = buff[i] - zero;
     if((dig < 0) || (dig > 9)){
@@ -143,6 +143,7 @@ int readf(float *f){  // return value is error or OK
       }
     } 
   }
+  if (mode == 0) ans *= 1.0;
   ans *= mult;
   *f = ans;  
   return 0;
