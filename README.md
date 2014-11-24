@@ -3,6 +3,8 @@
 ###What?
 Assembly language can be written in an inline mode. Some examples in C.
 
+To understand syscalls see  [this](http://chandergovind.blogspot.in/2014/08/on-software-interrupts-and-system-calls.html) blog post.
+
 ###Build Instruction
 For the main program, use the makefile included.
 
